@@ -1,0 +1,20 @@
+{
+  "name": "y2dw",
+  "version": "1.0.0",
+  "description": "Youtube Downloader",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Jack",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.12",
+    "ytdl-core": "^4.11.0"
+  },
+  "devDependencies": {
+    "electron": "^20.0.1"
+  }
+}
