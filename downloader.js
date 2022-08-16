@@ -11,23 +11,4 @@ const download = async (songsList) => {
     songsList.shift();
   }
 };
-
-/*const namesArray = []
-for(song of songsList){
-  let string = songsList[0].name
-  let realName = string.
-  namesArray.push(realName)
-}*/
-/*
-const download = async (songsList) => {
-  while (songsList.length > 5) {
-    console.log(songsList.length);
-    let firstItem = songsList[0];
-    let stream = ytdl(firstItem.videoId, { quality: "highestaudio" });
-    stream.pipe(
-      fs.createWriteStream(`${firstItem.name}.mp3`, songsList.shift())
-    );
-  }
-};
-*/
 exports.download = download;
