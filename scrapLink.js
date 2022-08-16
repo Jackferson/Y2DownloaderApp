@@ -1,6 +1,8 @@
 const cheerio = require("cheerio");
 const axios = require("axios").default;
 
+// const playlistURL = 'https://www.youtube.com/playlist?list=PL6c9xy-s-23jt_ky7Uip3-6rEYaVrCzdm'
+
 const scrap = async (playlistURL) => {
   const playlistId = new URL(playlistURL).searchParams.get("list");
   const response = await axios(
@@ -21,9 +23,10 @@ const scrap = async (playlistURL) => {
   const songs = contents
     .filter(({ playlistVideoRenderer }) => playlistVideoRenderer)
     .map(({ playlistVideoRenderer: playlistVideoRenderer_1 }) => ({
-      id: playlistVideoRenderer_1.videoId,
+      videoId: playlistVideoRenderer_1.videoId,
       name: playlistVideoRenderer_1.title.runs[0].text,
     }));
+  // console.log(songs);
   return songs;
 };
 

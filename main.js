@@ -1,17 +1,20 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const { scrap } = require("./scrapLink.js");
+const { download } = require("./downloader");
+
 require("electron-reload")(__dirname);
 
 const handleCallback = async (event, link) => {
-  const data = await scrap(link);
-  data.forEach((song) => console.log(song.name));
+  const songsList = await scrap(link);
+  await download(songsList)
 };
 
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 600,
     height: 600,
+    defaultEncoding: "utf-8",
     webPreferences: {
       preload: path.join(__dirname, "loader.js"),
     },
