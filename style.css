@@ -1,0 +1,29 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgb(1,95,134);
+  background: radial-gradient(circle, rgba(1,95,134,1) 5%, rgba(7,149,73,1) 26%, rgba(1,98,137,1) 37%, rgba(0,212,255,1) 96%);
+  width:auto;
+  background-repeat: no-repeat;
+}
+#formURL{
+  padding:20px;
+  display: flex;
+  box-sizing: border-box;
+  
+  width: 400px;
+  height: 100px;
+  background-color: blanchedalmond;
+}
+form{
+ align-items: center;
+ display: flex;
+ position: relative;
+ width:100%;
+
+}
+button{
+  position: relative;
+}
