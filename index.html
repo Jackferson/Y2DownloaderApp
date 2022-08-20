@@ -4,23 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>YouTube Downloader</title>
   </head>
   <body>
-    <form id="formURL">
-      <div class="form">
-        <input
+    <div class="box">
+      <form id="formURL">
+        <div class="form">
+          <input
           type="url"
           name="url"
           id="url"
           placeholder="Paste your youtube URL here!"
           autofocus
         />
-      </div>
-      <div class="container"></div>
-      <button>Press me!</button>
-    </form>
+        </div>
+        <button>Download!</button>
+      </form>
+    </div>
+    <div class="container"></div>
     <script src="handleSubmit.js"></script>
   </body>
 </html>
