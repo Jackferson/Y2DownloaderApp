@@ -3,10 +3,10 @@ const path = require("path");
 const { scrap } = require("./scrapLink.js");
 const { download } = require("./downloader");
 
-require("electron-reload")(__dirname);
-
+let data = '';
 const handleCallback = async (event, link) => {
   const songsList = await scrap(link);
+  await data.send('dataChannel', songsList)
   await download(songsList)
 };
 
@@ -20,6 +20,7 @@ const createWindow = () => {
     },
   });
   win.loadFile("index.html");
+  data = win.webContents
 };
 
 app.whenReady().then(() => {
