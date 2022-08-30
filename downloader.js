@@ -3,9 +3,11 @@ const ffmpeg = require("fluent-ffmpeg");
 
 let win;
 let index = 0;
-const download = async (songList, window) => {
+let directory;
+const download = async (songList, window, folder) => {
   if (win === undefined) {
     win = window;
+    directory = folder;
   }
   let item = songList[index];
   let string = item.name;
@@ -13,7 +15,7 @@ const download = async (songList, window) => {
   const stream = ytdl(item.videoId, { quality: "highestaudio" });
   ffmpeg(stream)
     .audioBitrate(128)
-    .save(`${__dirname}/downloads/${realName}.mp3`)
+    .save(`${directory}/${realName}.mp3`)
     .on("end", () => {
       update(item);
       finish(songList);

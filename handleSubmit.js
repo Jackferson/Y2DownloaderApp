@@ -5,6 +5,10 @@ const container = document.getElementById("container");
 
 let files = "";
 
+const selectFolder = () =>{
+  window.services.folderSelector()
+}
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const link = textValue.value;
