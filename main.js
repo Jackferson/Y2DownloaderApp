@@ -6,7 +6,7 @@ const appWindow = require("./window.js");
 const os = require('os');
 
 let window;
-let folder = path.join(os.homedir(), '/desktop');
+let folder = path.join(os.homedir(), '/downloads');
 
 const handleCallback = async (event, link) => {
   const songsList = await scrap(link);
