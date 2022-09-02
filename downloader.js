@@ -1,21 +1,22 @@
 const ytdl = require("ytdl-core");
 const ffmpeg = require("fluent-ffmpeg");
+const filePath = require('./filePath.js')
 
 let win;
 let index = 0;
-let directory;
-const download = async (songList, window, folder) => {
+
+const download = async (songList, window) => {
   if (win === undefined) {
     win = window;
-    directory = folder;
   }
+  let folder = filePath.get();
   let item = songList[index];
   let string = item.name;
   let realName = string.replace(/[^a-zA-Z0-9áéíóúñ ]/g, "-");
   const stream = ytdl(item.videoId, { quality: "highestaudio" });
   ffmpeg(stream)
     .audioBitrate(128)
-    .save(`${directory}/${realName}.mp3`)
+    .save(`${folder}/${realName}.mp3`)
     .on("end", () => {
       update(item);
       finish(songList);
