@@ -1,14 +1,12 @@
 const ytdl = require("ytdl-core");
 const ffmpeg = require("fluent-ffmpeg");
-const filePath = require('./filePath.js')
+const filePath = require("./filePath.js");
+const window = require("./window.js");
 
 let win;
 let index = 0;
 
-const download = async (songList, window) => {
-  if (win === undefined) {
-    win = window;
-  }
+const download = async (songList) => {
   let folder = filePath.get();
   let item = songList[index];
   let string = item.name;
@@ -34,6 +32,9 @@ const finish = async (songList) => {
 };
 
 const update = (message) => {
+  if (win === undefined) {
+    win = window.get();
+  }
   win.send("update", message);
 };
 
