@@ -7,6 +7,7 @@ let win;
 let index = 0;
 
 const download = async (songList) => {
+try {
   let folder = filePath.get();
   let item = songList[index];
   let string = item.name;
@@ -19,6 +20,9 @@ const download = async (songList) => {
       update(item);
       finish(songList);
     });
+} catch (error) {
+  console.error(error)
+}
 };
 
 const finish = async (songList) => {
