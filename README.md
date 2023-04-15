@@ -19,3 +19,12 @@ Requisites:
   - In case you need or prefer to download a video instead of limit it to the sound, you can change the parameters of the ytdl-core library and the ffmpeg format in a few minutes.
   - This app could stop working for a while if youtube change part of the structure (this happens once while it was on development), if this happens I will fix it as soon as I notice.
   
+
+  How to use? 
+  - Clone the repository.
+  - Install dependencies.
+  - Run "npm run make".
+  - Search your program on the out/make/X folder.
+  - Run the .exe file.
+  - Paste playlist link.
+  - Wait for the downloads.
